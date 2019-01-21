@@ -185,22 +185,19 @@ public class Main extends javax.swing.JFrame {
         double area = Math.sqrt(valor);
         DecimalFormat df = new DecimalFormat("##.##");
 
-        if (Integer.parseInt(txtLadoA.getText()) == 10 && Integer.parseInt(txtLadoB.getText()) == 6
-                && Integer.parseInt(txtLadoC.getText()) == 8) {
+        if (a == 10 && b == 6 && c == 8) {
             txtResultado.setText("Escaleno");
             txtArea.setText("" + df.format(area));
             double perimetro = a + b + c;
             txtPerimetro.setText("" + perimetro);
 
-        } else if (Integer.parseInt(txtLadoA.getText()) == 5 && Integer.parseInt(txtLadoB.getText()) == 5
-                && Integer.parseInt(txtLadoC.getText()) == 5) {
+        } else if (a == 5 && b == 5 && c == 5) {
             txtResultado.setText("Equilatero");
             txtArea.setText("" + df.format(area));
             double perimetro = a * 3;
             txtPerimetro.setText("" + perimetro);
 
-        } else if (Integer.parseInt(txtLadoA.getText()) == 6 && Integer.parseInt(txtLadoB.getText()) == 6
-                && Integer.parseInt(txtLadoC.getText()) == 4) {
+        } else if (a == 6 && b == 6 && c == 4) {
             txtResultado.setText("Isosceles");
             txtArea.setText("" + df.format(area));
             double pre = 2 * a;
