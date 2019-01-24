@@ -1,6 +1,7 @@
 package views;
 
 import java.text.DecimalFormat;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -38,6 +39,8 @@ public class Main extends javax.swing.JFrame {
         txtArea = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txtPerimetro = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        lblFigura = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -84,6 +87,26 @@ public class Main extends javax.swing.JFrame {
         txtPerimetro.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         txtPerimetro.setPreferredSize(new java.awt.Dimension(90, 27));
 
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Figura"));
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblFigura, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lblFigura, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -113,7 +136,8 @@ public class Main extends javax.swing.JFrame {
                                 .addComponent(btnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,6 +165,9 @@ public class Main extends javax.swing.JFrame {
                         .addGap(4, 4, 4)
                         .addComponent(txtPerimetro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -190,12 +217,14 @@ public class Main extends javax.swing.JFrame {
             txtArea.setText("" + df.format(area));
             double perimetro = a + b + c;
             txtPerimetro.setText("" + perimetro);
+            lblFigura.setIcon(new ImageIcon(getClass().getResource("/images/escaleno.jpg")));
 
         } else if (a == 5 && b == 5 && c == 5) {
             txtResultado.setText("Equilatero");
             txtArea.setText("" + df.format(area));
             double perimetro = a * 3;
             txtPerimetro.setText("" + perimetro);
+            lblFigura.setIcon(new ImageIcon(getClass().getResource("/images/equilatero.jpg")));
 
         } else if (a == 6 && b == 6 && c == 4) {
             txtResultado.setText("Isosceles");
@@ -203,11 +232,13 @@ public class Main extends javax.swing.JFrame {
             double pre = 2 * a;
             double perimetro = pre + c;
             txtPerimetro.setText("" + perimetro);
+            lblFigura.setIcon(new ImageIcon(getClass().getResource("/images/isosceles.png")));
 
         } else {
             txtResultado.setText("No es triangulo");
             txtArea.setText("0");
             txtPerimetro.setText("0");
+            lblFigura.setIcon(new ImageIcon(getClass().getResource("/images/sad.png")));
         }
     }//GEN-LAST:event_btnAceptarActionPerformed
 
@@ -219,6 +250,7 @@ public class Main extends javax.swing.JFrame {
         txtLadoC.setText("");
         txtPerimetro.setText("");
         txtResultado.setText("");
+        lblFigura.setIcon(new ImageIcon(getClass().getResource("")));
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     /**
@@ -263,6 +295,8 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JLabel lblFigura;
     private javax.swing.JTextField txtArea;
     private javax.swing.JTextField txtLadoA;
     private javax.swing.JTextField txtLadoB;
